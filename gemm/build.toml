@@ -1,0 +1,22 @@
+[general]
+name = "gemm"
+universal = false
+
+[torch]
+src = [
+  "torch-ext/torch_binding.cpp",
+  "torch-ext/torch_binding.h"
+]
+
+[kernel.gemm]
+backend = "rocm"
+rocm-archs = [
+    "gfx906",
+    "gfx908",
+    "gfx90a",
+    "gfx940",
+    "gfx941",
+    "gfx942",
+]
+depends = ["torch"]
+src = ["gemm/gemm.hip", "gemm/gemm_kernel_legacy.hip", "gemm/gemm_launcher.hip", "gemm/transpose_kernel.hip"]
