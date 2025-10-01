@@ -2,7 +2,7 @@
   description = "Flake for GEMM kernel";
 
   inputs = {
-    kernel-builder.url = "github:huggingface/kernel-builder/rocwmma";
+    kernel-builder.url = "github:huggingface/kernel-builder/rocm-per-source-arches";
   };
 
   outputs =

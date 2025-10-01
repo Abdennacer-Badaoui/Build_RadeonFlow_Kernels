@@ -2,9 +2,9 @@
 #include <unistd.h>
 #include <chrono>
 #define PARAMETERIZE_LIBRARY
-#include "gemm_kernel.cpp"
-#include "gemm_kernel_legacy.cpp"
-#include "transpose_kernel.cpp"
+#include "gemm_kernel.h"
+#include "gemm_kernel_legacy.h"
+#include "transpose_kernel.h"
 #undef PARAMETERIZE_LIBRARY
 #include "../include/gpu_types.h"
 #include "../include/timer.h"

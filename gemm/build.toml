@@ -11,12 +11,28 @@ src = [
 [kernel.gemm]
 backend = "rocm"
 rocm-archs = [
-    "gfx906",
     "gfx908",
     "gfx90a",
     "gfx940",
     "gfx941",
     "gfx942",
+    "gfx1100",
+    "gfx1101",
+    "gfx1102",
+    "gfx1200",
+    "gfx1201",
 ]
 depends = ["torch"]
-src = ["gemm/gemm.hip", "gemm/gemm_kernel_legacy.hip", "gemm/gemm_launcher.hip", "gemm/transpose_kernel.hip"]
+src = [
+  "include/clangd_workaround.h",
+  "include/gpu_libs.h",
+  "include/gpu_types.h",
+  "include/timer.h",
+  "gemm/gemm_kernel.h",
+  "gemm/gemm_kernel_legacy.h",
+  "gemm/gemm_launcher.hip",
+  "gemm/transpose_kernel.h",
+  "src/utils/arithmetic.h",
+  "tests/checker/metrics.h",
+]
+include = ["include"]
