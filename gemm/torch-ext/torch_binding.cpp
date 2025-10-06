@@ -46,7 +46,7 @@ void gemm(torch::Tensor &out, torch::Tensor const &a, torch::Tensor const &b,
 }
 
 TORCH_LIBRARY_EXPAND(TORCH_EXTENSION_NAME, ops) {
-  ops.def("gemm(Tensor! out, Tensor a, Tensor b, Tensor as, Tensor bs) -> ()");
+  ops.def("gemm(Tensor! out, Tensor a, Tensor b, Tensor a_scale, Tensor b_scale) -> ()");
   ops.impl("gemm", torch::kCUDA, &gemm);
 }
 

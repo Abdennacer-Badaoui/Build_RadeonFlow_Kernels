@@ -2,6 +2,7 @@
 #include "gpu_types.h"
 #include "gpu_libs.h"
 #include <memory>
+#include <vector>
 
 typedef void (*TimerCompletionCallback)(float elapsed_time, size_t calc_ops, float *time_ptr, float *gflops_ptr,
                                         void *user_data);

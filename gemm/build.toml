@@ -5,22 +5,22 @@ universal = false
 [torch]
 src = [
   "torch-ext/torch_binding.cpp",
-  "torch-ext/torch_binding.h"
+  "torch-ext/torch_binding.h",
 ]
 
 [kernel.gemm]
 backend = "rocm"
 rocm-archs = [
-    "gfx908",
-    "gfx90a",
-    "gfx940",
-    "gfx941",
+  #"gfx908",
+  #  "gfx90a",
+  # "gfx940",
+  # "gfx941",
     "gfx942",
-    "gfx1100",
-    "gfx1101",
-    "gfx1102",
-    "gfx1200",
-    "gfx1201",
+  # "gfx1100",
+  # "gfx1101",
+  # "gfx1102",
+  # "gfx1200",
+  # "gfx1201",
 ]
 depends = ["torch"]
 src = [
@@ -33,6 +33,7 @@ src = [
   "gemm/gemm_launcher.hip",
   "gemm/transpose_kernel.h",
   "src/utils/arithmetic.h",
+  "src/utils/timer.hip",
   "tests/checker/metrics.h",
 ]
 include = ["include"]
